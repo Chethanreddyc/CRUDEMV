@@ -1,12 +1,19 @@
-import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavbarSimple from './components/Navbar';
 import StudentList from './components/StudentList';
+import Faculty from './components/Faculty';
 
 function App() {
   return (
-    <div>
-      <h1>Student Management System</h1>
-      <StudentList />
-    </div>
+    <Router>
+      <div>
+        <NavbarSimple />
+        <Routes>
+          <Route path="/" element={<StudentList />} />
+          <Route path="/faculty" element={<Faculty />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
